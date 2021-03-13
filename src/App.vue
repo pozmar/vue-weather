@@ -111,7 +111,6 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Permanent Marker', cursive;
 }
 body {
   font-family: 'montserrat', sans-serif;
