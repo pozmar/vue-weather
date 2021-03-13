@@ -7,8 +7,8 @@
           class="search-bar" 
           placeholder="Search..."
           v-model="query"
-          
           @keypress="fetchWeather"
+          @click="clear()"
         />
       </div>
 
@@ -64,6 +64,9 @@ export default {
             return res.json();
           }).then(this.setResults).then(this.backg);
       }
+    },
+    clear(){
+      return this.query = "";
     },
     setResults (results) {
      
@@ -214,6 +217,9 @@ main {
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
+.inner:hover{
+  cursor: pointer;
+}
 .card-temp:hover .inner{
   transform: rotateY(180deg);
 
@@ -230,11 +236,10 @@ main {
 }
 .back{
   transform: rotateY(180deg);
-  
   font-size: 50px;
   font-weight: 900;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
-  background-image:linear-gradient(darkblue, red);
+  background-image: linear-gradient(45deg, grey, white);
   border-radius: 16px;
   height:200px;
   
@@ -252,9 +257,6 @@ main {
   font-size:20px;
   font-style: italic;
   align-self: flex-end;
- 
 }
-.description:hover main{
-  background-image: linear-gradient(to bottom,  rgba(255, 255, 255, 7), rgba(255, 255, 255, 7));
-}
+
 </style>
